@@ -1,9 +1,6 @@
 import {
     Hammer,
-    CreditCard,
-    Settings,
-    FilePlus2,
-    User,
+    FilePlus2
 } from "lucide-react";
 
 import {
@@ -20,52 +17,61 @@ import {
     CommandSeparator,
     CommandShortcut,
 } from "@/components/ui/command";
-   
-export default function Header({id}:{id:string}) {
 
-    const avatarName = id[0].toUpperCase() + id[1].toUpperCase();
+
+import { nameReducer } from "./utils/name_reducer";
+
+import Image from "next/image";
+import Link from "next/link";
+   
+export default function Header({
+  id,
+  setModalToDo
+}:{
+  id:string,
+  setModalToDo: any
+}) {
 
     return (
-    <header className="m-1">
-      <Command className="rounded-lg border shadow-md">
-        <CommandList>
-          <Avatar className="mt-4 mb-4 mr-auto ml-auto">
-            <AvatarImage src={`/assets/images/avatars/${id}.jpg`} alt={id} />
-            <AvatarFallback className="bg-regal-orange">{avatarName}</AvatarFallback>
-          </Avatar>
-          <CommandSeparator />
-          <CommandGroup heading="Settings">
-            <CommandItem>
-              <User className="mr-2 h-4 w-4" />
-              <span>Profile</span>
-              <CommandShortcut>⌘P</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <CreditCard className="mr-2 h-4 w-4" />
-              <span>Billing</span>
-              <CommandShortcut>⌘B</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <Settings className="mr-2 h-4 w-4" />
-              <span>Settings</span>
-              <CommandShortcut>⌘S</CommandShortcut>
-            </CommandItem>
-          </CommandGroup>
-          <CommandSeparator />
-          <CommandGroup heading="Videos">
-            <CommandItem>
-              <FilePlus2 className="mr-2 h-4 w-4" />
-              <span>Add video</span>
-              <CommandShortcut>⌘A</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <Hammer className="mr-2 h-4 w-4" />
-              <span>Edit video</span>
-              <CommandShortcut> ⌘R</CommandShortcut>
-            </CommandItem>
-          </CommandGroup>
-        </CommandList>
-      </Command>
+      <header className="m-1 w-[calc(100%-10px)] flex flex-row lg:flex-col lg:h-[calc(100vh-5px)] lg:w-[150px]">
+        <Command className="rounded-lg border shadow-md h-[90px] w-[90px] lg:h-[100px] lg:w-full mb-1 mr-1 lg:mr-0">
+          <Link className="mt-4 mb-4 mr-auto ml-auto flex flex-row justify-center" href={"/"}>
+            <Image  src={`/assets/images/logos/LOGO_ICON.png`} 
+                    alt={"to main"}
+                    width={50}
+                    height={50}
+                    style={{objectFit:"cover"}}/>
+          </Link>
+        </Command>
+        <Command className="rounded-lg border shadow-md grow flex flex-row lg:flex-col h-[90px] lg:h-[auto]">
+          <CommandList className="max-h-[500px]">
+            <div className="flex flex-row lg:flex-col">
+              <Avatar className="mt-6 mb-4 ml-4 mr-4 lg:ml-auto lg:mr-auto">
+                <AvatarImage src={`/assets/images/avatars/${id}.jpg`} alt={id} />
+                <AvatarFallback className="bg-regal-orange">{nameReducer(id)}</AvatarFallback>
+              </Avatar>
+              <CommandSeparator className="object-none lg:flex"/>
+              <CommandGroup heading="" className="mt-2.5">
+                <CommandItem  className="hover:cursor-pointer">
+                  <FilePlus2 className="mr-2 h-4 w-4" />
+                  <p  className="w-24" 
+                      onClick={()=>setModalToDo("Share")}>
+                      Add video
+                  </p>
+                  <CommandShortcut>⌘A</CommandShortcut>
+                </CommandItem>
+                <CommandItem  className="hover:cursor-pointer">
+                  <Hammer className="mr-2 h-4 w-4" />
+                  <p  className="w-24" 
+                      onClick={()=>setModalToDo("Edit")}>
+                      Edit video
+                  </p>
+                  <CommandShortcut> ⌘R</CommandShortcut>
+                </CommandItem>
+              </CommandGroup>
+            </div>
+          </CommandList>
+        </Command>
       </header>
     )
   }

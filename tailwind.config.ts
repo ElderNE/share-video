@@ -14,12 +14,16 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        'lg': '920px',
       },
     },
     extend: {
       colors: {
         'regal-orange': '#FFBB35',
+        'regal-green': '#48B595',
+        'regal-blue': '#4EC9E3',
+        'regal-gray': '#3E5F72',
+        'fff-0': 'rgba(255,255,255,0)',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -72,6 +76,9 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      screens: {
+        'lg': '920px',
       },
     },
   },
