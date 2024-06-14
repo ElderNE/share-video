@@ -1,7 +1,7 @@
 ## Demo Next.Js project
 
 
-Live demo [learnwell-seven.vercel.app](learnwell-seven.vercel.app).
+Live demo [https://learnwell-seven.vercel.app](https://learnwell-seven.vercel.app).
 
 Enter a name to go to the video list page.
 
