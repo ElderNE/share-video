@@ -28,7 +28,7 @@ export default function List({
                         height="240"
                         muted
                         playsInline
-                        preload="metadata"
+                        preload="auto"
                         className="rounded-lg border bg-white"
                         key={key}>
                         <source src={data.url} 
