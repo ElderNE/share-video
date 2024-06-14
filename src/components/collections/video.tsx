@@ -14,7 +14,7 @@ export default function Video({
                 autoPlay
                 preload="metadata"
                 key={choosenVideo}
-                className="w-[100%] h-[100%] lg:max-h-[calc(58vw-265px)]">
+                className="w-[100%] h-[100%] lg:max-h-[calc(58vw-265px)] bg-white">
             <source src={video} type="video/mp4" />
             Your browser does not support the video tag.
         </video>

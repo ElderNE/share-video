@@ -26,8 +26,8 @@ export default function List({
                     onClick={()=>setChoosenVideo(Number(key))}>
                 <video  width="100%" 
                         height="240" 
-                        preload="metadata" 
-                        className="rounded-lg border"
+                        preload="metadata"
+                        className="rounded-lg border bg-white"
                         key={key}>
                         <source src={data.url} 
                                 type="video/mp4" />
