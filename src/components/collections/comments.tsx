@@ -28,7 +28,7 @@ export default function Video({
 }) {
 
     return (
-      <div className={`rounded-lg border shadow-md ml-1 mr-1 flex flex-col justify-start p-4 ${openClose?"h-[calc(50vh+110px)] lg:h-[50vh] bg-white":"h-[74px] backdrop-blur-sm lg:backdrop-blur-none"} overflow-hidden duration-200`}>
+      <div className={`rounded-lg border shadow-md ml-1 mr-1 flex flex-col justify-start p-4 ${openClose?"h-[calc(50vh+110px)] lg:h-[50vh] bg-white":"h-[74px] backdrop-blur-sm lg:backdrop-blur-none backdropFilter"} overflow-hidden duration-200`}>
         {openClose && <ScrollArea className="w-full rounded-md mb-2 shrink-0 h-[calc(50vh-20px)] lg:h-[calc(50vh-74px-1rem)] relative">
             <div className="">
             {comments.length>0 &&comments.map((data, key) => (

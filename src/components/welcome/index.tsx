@@ -22,9 +22,9 @@ export default function Welcome() {
     const handlerSubmit = (e:React.SyntheticEvent) => {
       e.preventDefault();
       const target = e.target as typeof e.target & {
-        id: { value: string };
+        id: { value: string | number};
       };
-      const id = target.id.value;
+      const id = String(target.id.value);
       if(id) { //validation
         router.push(`/collections/${id}`);
       }

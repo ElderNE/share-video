@@ -25,7 +25,9 @@ export default function List({
                     className="text-sm hover:cursor-pointer flex flex-col items-center w-[280px]" 
                     onClick={()=>setChoosenVideo(Number(key))}>
                 <video  width="100%" 
-                        height="240" 
+                        height="240"
+                        muted
+                        playsInline
                         preload="metadata"
                         className="rounded-lg border bg-white"
                         key={key}>
