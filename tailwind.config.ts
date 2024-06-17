@@ -23,6 +23,7 @@ const config = {
         'regal-green': '#48B595',
         'regal-blue': '#4EC9E3',
         'regal-gray': '#3E5F72',
+        'regal-light-gray': '#F2F6F9',
         'fff-0': 'rgba(255,255,255,0)',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -23,6 +23,9 @@ export default function Page({
   params: { id: string } 
 }) {
   return (
-    <Collections id={params.id} />
+    <>
+      {params.id.length>0 && <Collections id={params.id} 
+                                          user="default"/>}
+    </>
   )
 }

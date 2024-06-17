@@ -1,8 +1,8 @@
 export function colorizer(key:number):string {
-    //any colors, looks like random function
+    ///You could choose any custom colors. Function Looks like random color.
     switch(true) {
         case (key%3===0):
-            return "bg-regal-blue";
+            return "bg-regal-blue"; 
         case (key%5===0):
             return "bg-regal-green";
         case (key%7===0):
