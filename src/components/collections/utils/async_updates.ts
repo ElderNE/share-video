@@ -1,6 +1,6 @@
 //endpoints
-const endPointComments = "https://take-home-assessment-423502.uc.r.appspot.com/api/videos/comments";
-const endPointVideos = "https://take-home-assessment-423502.uc.r.appspot.com/api/videos";
+const endPointComments = process.env.END_POINT_COMMENTS || "";
+const endPointVideos = process.env.END_POINT_VIDEOS || "";
 
 //utils
 import { isHttps } from "./is_https";
