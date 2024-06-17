@@ -90,7 +90,15 @@ export const addOrUpdateWithVideo = async(workMethod:string, data: CreateVideo |
 export const getAllVideos = async(id:string) => {
     const endPoint = `${endPointVideos}?user_id=${id}`
     try{
-      const req = await fetch (endPoint, {method: "GET"});
+      const req = await fetch (endPoint, {
+        method: "GET",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Methods":"GET",
+          "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+        }
+      });
       const res = await req.json() as GivenData;
       const newRes:Array<VideosList> = [];
       if(Array.isArray(res.videos)) {
@@ -119,7 +127,15 @@ export const getAllVideos = async(id:string) => {
 export const getAllComments = async(id:string) => {
     const endPoint = `${endPointComments}?video_id=${id}`;
     try{
-      const req = await fetch (endPoint, {method: "GET"});
+      const req = await fetch (endPoint, {
+        method: "GET",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Methods":"GET",
+          "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+        }
+      });
       const res = await req.json() as GivebComments;
       const newRes:Array<{id:string,comment:string}> = [];
       if(Array.isArray(res.comments)) {
