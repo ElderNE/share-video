@@ -24,10 +24,10 @@ function CommentsControl({
                                             placeholder="Text" 
                                             className="w-full lg:w-[calc(100%-42rem)] grow mb-1 lg:mb-0"/>
                                     <Button className="w-32 ml-2 shrink-0 mb-1 lg:mb-0 grow lg:grow-0">
-                                            {addCommentBusstonState}
+                                            {openClose?addCommentBusstonState:"Add comment"}
                                     </Button>
                 </form>}
-                <Button className="w-32 ml-2 mb-1 lg:mb-0 shrink-0 bg-regal-orange text-regal-gray
+                <Button className="w-32 ml-2 mb-1 lg:mb-0 shrink-0 bg-regal-orange text-black
                                 hover:bg-regal-gray hover:text-white"
                         onClick={ () => setshowComments(!openClose) }>
                         {openClose?"Close comments":"Show comments"}

@@ -23,9 +23,9 @@ function List({
     return (
       <ScrollArea className="h-[50vh] lg:h-[calc(100vh-5px)] w-[calc(100%-10px) lg:w-[320px] rounded-md border m-1 pt-2 pb-2 shrink-0">
         <div className="p-4 flex flex-col items-center">
-          <h4 className="mb-4 h-4 text-sm font-medium leading-none overflow-hidden">
+          <h2 className="mb-4 h-4 text-sm font-medium leading-none overflow-hidden">
             {listHeader}
-          </h4>
+          </h2>
           {videos.length===0 && <Spinner />}
           {videos.length>0 && videos.map((data, key) => (
             <div    key={data.id} 

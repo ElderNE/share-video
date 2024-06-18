@@ -61,7 +61,9 @@ function Modal({
                 </div>
               </div>
               <div className="mt-4">
-                <Button type="submit" className="w-[200px]">{toDo}{informData?".":""} {informData}</Button>
+                <Button type="submit" className="w-[200px]">
+                  {toDo===""?"Send":toDo}{informData?".":""} {informData}
+                </Button>
               </div>
             </form>
           </CardContent>
