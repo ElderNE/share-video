@@ -1,14 +1,25 @@
-Any copy for commercial use is strictly prohibited.
-
+$\textcolor{red}{Any copy for commercial use is strictly prohibited!}$
 
 ## Demo Next.Js project
 
 
 Live demo [https://learnwell-seven.vercel.app](https://learnwell-seven.vercel.app).
 
-Enter a name on the first page to go to the video page. The app displays videos from interested users, but only logged-in users can add, edit, and comment on videos. Logged-in users are managed by server-side logic, now implemented in page.tsx within the app router.
+The project is the frontend part of a video hosting app. The app displays videos from selected users, but only logged-in users can add, edit, and comment on videos. Logged-in users are managed by server-side logic, now implemented in page.tsx within the app router. Authorization logic will be implemented if necessary.
+
+Easy to use. Enter a name on the first page and you will be redirected to the video list page. Scroll through the video list and choose an interesting video. The main video has a description for information. Videos in the video list have titles and IDs for easy access to editing information about the video (use the video ID). 
+
+You can add videos (links to an external server with an MP4 video) and edit video titles and descriptions. YouTube videos are not supported; only MP4 file hosting is allowed. Comments can also be made for each video.
 
 YouTube videos are not supported. Only MP4 file hosting is allowed.
+
+![Desktop screen.](/public/assets/images/readme/comments_closed.jpg)
+
+![Desktop screen.](/public/assets/images/readme/comments_opened.jpg)
+
+![Mobile screen.](/public/assets/images/readme/mobile.jpg)
+
+![Mobile screen.](/public/assets/images/readme/mobile1.jpg)
 
 
 ## Getting Started
