@@ -1,7 +1,7 @@
 {
     "headers": [
         {
-            "source": "https://take-home-assessment-423502.uc.r.appspot.com/api/videos",
+            "source": "/api/videos(.*)",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",
@@ -22,7 +22,7 @@
             ]
         },
         {
-            "source": "https://take-home-assessment-423502.uc.r.appspot.com/api/videos/comments",
+            "source": "/api/videos/comments(.*)",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",
