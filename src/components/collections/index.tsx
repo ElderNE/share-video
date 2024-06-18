@@ -57,7 +57,7 @@ function Collections({id, user}:{id:string, user:string}) {
   //fix data from objects for protect rerendering
   const video = videosList[choosenVideo]?.url?videosList[choosenVideo].url:""; 
   const description = videosList[choosenVideo]?.url?textProtection(videosList[choosenVideo].description):"";
-  const videoId = videosList[choosenVideo]?.id?videosList[choosenVideo].id:videosList[0].id;
+  const videoId = videosList[choosenVideo]?.id?videosList[choosenVideo].id:"";
   
   //update videolist
   useEffect(()=>{
@@ -99,11 +99,11 @@ function Collections({id, user}:{id:string, user:string}) {
         content: { value: string | number};
     };
     const content = String(target.content.value);
-    if(content) { 
+    if(content && videosList.length>0) { 
         const data = {
             user_id: user,
             content: textProtection(content),
-            video_id: videoId,
+            video_id: videoId!==""?videoId:videosList[0].id,
         }
         const result = await addNewComment(data);
         console.log(result)
