@@ -25,7 +25,7 @@ export default function Page({
   return (
     <>
       {params.id.length>0 && <Collections id={params.id} 
-                                          user="default"/>}
+                                          user="Newuser"/>}
     </>
   )
 }

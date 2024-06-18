@@ -48,7 +48,7 @@ function Collections({id, user}:{id:string, user:string}) {
   //states
   const [ infromData, seInfromData ] = useState("");                                  //showing submit process for add/edit video
   const [ addCommentBusstonState, setCommentBusstonState ] = useState("Add comment"); //showing submit process for comments
-  const [ choosenVideo, setChoosenVideo ] = useState<number>(0);                      //showing vidoe, first byy default
+  const [ choosenVideo, setChoosenVideo ] = useState<number>(0);                      //showing vidoe (first by default)
   const [ modalToDo, setModalToDo ] = useState<string>("");                           //show modal window
   const [ showComments, setshowComments ] = useState<boolean>(false);                 //show comments
   const [ comments, setComments ] =useState<Array<{id:string,comment:string}>>([]);   //all comments
@@ -81,7 +81,7 @@ function Collections({id, user}:{id:string, user:string}) {
       }
       getData();
     }
-  },[showComments, addCommentBusstonState==="Sending"])
+  },[showComments, addCommentBusstonState==="Sending", choosenVideo])
   
   //refresh button state after modal closing
   useEffect(()=>{
@@ -121,7 +121,7 @@ function Collections({id, user}:{id:string, user:string}) {
 
   const callbacksSubmitCommentControl = useCallback( async(e:React.SyntheticEvent) => {
     handlerSubmitCommentControl(e);
-  }, [showComments]);
+  }, [showComments, comments]);
 
   //async update videos:
   const modalFormSubmit = async(e:React.SyntheticEvent, workMethod:string) => {
@@ -199,7 +199,7 @@ function Collections({id, user}:{id:string, user:string}) {
                               setshowComments={setshowComments}
                               addCommentBusstonState={addCommentBusstonState}
                               handlerSubmitCommentControl={callbacksSubmitCommentControl}/>
-            {showComments && <Comments comments={comments}/>}
+            {showComments && <Comments  comments={comments}/>}
           </div>
         </div>
         <List listHeader={nameToHeader(id, "videos")} 
