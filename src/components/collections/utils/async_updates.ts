@@ -98,7 +98,7 @@ export const getAllVideos = async(id:string) => {
         res.videos.forEach(element => {
           if(element?.video_url && isHttps(element.video_url) && element.title)
             newRes.push({
-              url: element.video_url,
+              url: element.video_url.replace(/\.mp4.*/, ".mp4").replace(/.*?(http)/, '$1'),
               name: textProtection(element.title),
               id: element.id,
               description: textProtection(element.description)
