@@ -99,7 +99,7 @@ function Collections({id, user}:{id:string, user:string}) {
         content: { value: string | number};
     };
     const content = String(target.content.value);
-    if(content && videosList.length>0) { 
+    if(content && videosList[0]?.id) { 
         const data = {
             user_id: user,
             content: textProtection(content),
@@ -121,7 +121,7 @@ function Collections({id, user}:{id:string, user:string}) {
 
   const callbacksSubmitCommentControl = useCallback( async(e:React.SyntheticEvent) => {
     handlerSubmitCommentControl(e);
-  }, []);
+  }, [showComments]);
 
   //async update videos:
   const modalFormSubmit = async(e:React.SyntheticEvent, workMethod:string) => {
