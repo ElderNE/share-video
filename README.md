@@ -1,4 +1,4 @@
-$\textcolor{red}{Any copy for commercial use is strictly prohibited!}$
+$\textcolor{red}{Any\ copy\ for\ commercial\ use\ is\ strictly\ prohibited!}$
 
 ## Demo Next.Js project
 
