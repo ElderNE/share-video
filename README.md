@@ -3,7 +3,7 @@ $\textcolor{red}{Any\ copy\ for\ commercial\ use\ is\ strictly\ prohibited!}$
 ## Demo Next.Js project
 
 
-Live demo [https://learnwell-seven.vercel.app](https://learnwell-seven.vercel.app).
+Live demo [https://learnwell-seven.vercel.app](https://learnwell-seven.vercel.app/collections/eldar_nuretdinov).
 
 The project is the frontend part of a video hosting app. The app displays videos from selected users, but only logged-in users can add, edit, and comment on videos. Logged-in users are managed by server-side logic, now implemented in page.tsx within the app router. Authorization logic will be implemented if necessary.
 
