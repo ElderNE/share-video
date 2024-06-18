@@ -57,7 +57,7 @@ function Collections({id, user}:{id:string, user:string}) {
   //fix data from objects for protect rerendering
   const video = videosList[choosenVideo]?.url?videosList[choosenVideo].url:""; 
   const description = videosList[choosenVideo]?.url?textProtection(videosList[choosenVideo].description):"";
-  const videoId = videosList[choosenVideo]?.id?videosList[choosenVideo].id:videosList[0]?.id;
+  const videoId = videosList[choosenVideo]?.id?videosList[choosenVideo].id:videosList[0].id;
   
   //update videolist
   useEffect(()=>{
