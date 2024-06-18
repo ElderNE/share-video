@@ -53,6 +53,11 @@ function Collections({id, user}:{id:string, user:string}) {
   const [ showComments, setshowComments ] = useState<boolean>(false);                 //show comments
   const [ comments, setComments ] =useState<Array<{id:string,comment:string}>>([]);   //all comments
   const [ videosList, setVideosList ] = useState<Array<VideosList>>([]);              //all videos
+
+  //fix data from objects for protect rerendering
+  const video = videosList[choosenVideo]?.url?videosList[choosenVideo].url:""; 
+  const description = videosList[choosenVideo]?.url?textProtection(videosList[choosenVideo].description):"";
+  const videoId = videosList[choosenVideo]?.id?videosList[choosenVideo].id:videosList[0]?.id;
   
   //update videolist
   useEffect(()=>{
@@ -165,11 +170,6 @@ function Collections({id, user}:{id:string, user:string}) {
     modalFormSubmit(e, workMethod);
   }, []);
 
-  //fix data from objects for protect rerendering
-  const video = videosList[choosenVideo]?.url?videosList[choosenVideo].url:""; 
-  const description = videosList[choosenVideo]?.url?textProtection(videosList[choosenVideo].description):"";
-  const videoId = videosList[choosenVideo]?.id?videosList[choosenVideo].id:"";
-
   return (
     <div className="w-full lg:h-[100vh] flex flex-col lg:flex-row lg:justify-between relative">
       <Modal  toDo={modalToDo}
@@ -188,7 +188,7 @@ function Collections({id, user}:{id:string, user:string}) {
             {video!=="" && <Video   video={video}
                                     choosenVideo={choosenVideo}/>}
             {description.length>0 && <h1 className="w-[100%] mt-[20px] h-[30px] overflow-hidden">
-              {videoId}: {description}
+              {description}
             </h1>}                                  
           </div>
           <div className={`rounded-lg border shadow-md ml-1 mr-1 flex flex-col justify-start p-4

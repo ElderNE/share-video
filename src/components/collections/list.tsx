@@ -43,6 +43,7 @@ function List({
                                 type="video/mp4" />
                         Your browser does not support the video tag.
                 </video>
+                <p className="overflow-hidden h-5 pl-2 w-[280px]">ID: {data.id}</p>
                 <p className="overflow-hidden h-5 pl-2 w-[280px]">{data.name}</p>
                 <Separator className="my-2" />
             </div>
